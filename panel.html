@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Panel sterowania | VIP Menu</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Panel sterowania VIP Menu: dodawanie i usuwanie stron z daniami.">
+<meta property="og:title" content="VIP Menu: dania z restauracji w Twoim mieście">
+<meta property="og:description" content="Wpisz, na co masz ochotę. Zobacz zdjęcie, cenę, adres i dojazd.">
+<meta property="og:image" content="img/tatar.jpg">
+<meta name="theme-color" content="#FAF7F0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23C8952A'/%3E%3Ccircle cx='32' cy='32' r='26' fill='%23111'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia' font-weight='700' font-size='22' fill='%23F2D57A'%3EVIP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css?v=20260928">
+</head>
+<body data-strona="panel">
+<div class="tlo" aria-hidden="true"></div>
+<header class="panel-gora">
+  <a class="logo " href="index.html" aria-label="VIP Menu, strona główna"><span data-ikona="logo"></span><span>MENU</span></a>
+  <h1>Panel sterowania</h1>
+  <a class="wroc" href="index.html">← wróć do portalu</a>
+</header>
+<main class="panel">
+  <section class="blok" aria-labelledby="h-dodaj">
+    <h2 id="h-dodaj">Dodaj stronę</h2>
+    <p class="opis-bloku">Jedna strona to jedno danie. Dania tej samej restauracji trafiają do jej folderu.</p>
+    <form id="form-dodaj" action="#" novalidate>
+      <div class="pole"><label for="p-rest">Nazwa restauracji</label>
+        <input id="p-rest" list="rest-lista" autocomplete="off" placeholder="np. Sami's Restaurant"><datalist id="rest-lista"></datalist>
+        <small>Nowa nazwa tworzy folder. Istniejąca dopisuje do niego kolejne danie.</small><span class="folder-info" id="folder-info"></span><span class="komunikat">Wpisz nazwę restauracji.</span></div>
+      <div class="pole"><label for="p-danie">Nazwa dania</label><input id="p-danie" autocomplete="off" placeholder="np. Tatar z polędwicy wołowej">
+        <small>Po tej nazwie danie znajdzie wyszukiwarka na stronie głównej.</small><span class="komunikat">Wpisz nazwę dania.</span></div>
+      <div class="pole"><label for="p-opis">Opis dania</label><textarea id="p-opis" placeholder="np. kapary, żółtko przepiórcze, borowik, pikle"></textarea></div>
+      <div class="pole"><label for="p-foto">Zdjęcie dania</label>
+        <div class="foto-pole"><input id="p-foto" type="file" accept="image/*"><span class="podglad" id="podglad">+</span><span><b>Wgraj zdjęcie</b><span id="foto-nazwa">Wybierz albo przeciągnij zdjęcie</span></span></div>
+        <span class="komunikat">Dodaj zdjęcie dania.</span></div>
+      <div class="dwa">
+        <div class="pole"><label for="p-cena">Cena (zł)</label><input id="p-cena" inputmode="decimal" placeholder="np. 60"><span class="komunikat">Podaj cenę.</span></div>
+        <div class="pole"><label for="p-miasto">Miasto</label><select id="p-miasto"></select></div>
+      </div>
+      <div class="pole"><label for="p-adres">Ulica i&nbsp;numer</label><input id="p-adres" placeholder="np. ul. Piotrkowska 12"><span class="komunikat">Podaj adres.</span></div>
+      <div class="pole"><label for="p-maps">Link do Google Maps</label><input id="p-maps" type="url" placeholder="https://maps.google.com/…">
+        <small>Otwiera się po kliknięciu ikony mapy. Puste pole = mapa wyszuka adres sama.</small></div>
+      <div class="pole"><label for="p-www">Link do strony www / Facebooka</label><input id="p-www" type="url" placeholder="https://…">
+        <small>Otwiera się po kliknięciu ikony drzwi „wejdź…”.</small></div>
+      <button class="btn-dodaj" type="submit">DODAJ DO VIP MENU</button>
+    </form>
+  </section>
+  <section class="blok" aria-labelledby="h-szukaj">
+    <h2 id="h-szukaj">Szukaj strony</h2>
+    <p class="opis-bloku">Wpisz nazwę folderu restauracji. Każde danie możesz obejrzeć albo usunąć z&nbsp;portalu.</p>
+    <form id="p-szukaj-form" class="szukaj-panel" role="search" action="#"><label for="p-szukaj" class="sr">Nazwa restauracji</label>
+      <input id="p-szukaj" type="search" placeholder="np. Sami's Restaurant" autocomplete="off"><button type="submit">Szukaj…</button></form>
+    <div id="lista"></div>
+    <p class="nota">Wersja pokazowa: zmiany zapisują się tylko w&nbsp;tej przeglądarce. W&nbsp;wersji docelowej panel ma logowanie, a&nbsp;dodane dania od razu widzi każdy gość portalu. <button type="button" id="reset">Przywróć dane pokazowe</button></p>
+  </section>
+</main>
+<div class="okno-tlo" id="okno" hidden><div class="okno" role="dialog" aria-modal="true" aria-labelledby="okno-tytul">
+  <h2 id="okno-tytul"></h2><p id="okno-tekst"></p>
+  <div class="przyciski"><button type="button" class="btn-male" id="okno-nie">Nie</button><button type="button" class="btn-male tak" id="okno-tak">Tak, usuń</button></div>
+</div></div>
+<footer class="stopka">
+  <p><a href="index.html">Wyszukiwarka</a> · <a href="danie.html?los=1">Przeglądaj rotacyjnie</a> · <a href="panel.html">Panel sterowania</a></p>
+  <p>www.vip-menu.pl · wersja pokazowa z&nbsp;przykładowymi restauracjami · Projekt strony: Impulseo</p>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="assets/data.js?v=20260928"></script>
+<script src="assets/app.js?v=20260928"></script>
+</body>
+</html>

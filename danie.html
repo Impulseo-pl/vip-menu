@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Karta dania | VIP Menu</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Karta dania w VIP Menu: zdjęcie, opis, cena, adres restauracji i dojazd.">
+<meta property="og:title" content="VIP Menu: dania z restauracji w Twoim mieście">
+<meta property="og:description" content="Wpisz, na co masz ochotę. Zobacz zdjęcie, cenę, adres i dojazd.">
+<meta property="og:image" content="img/tatar.jpg">
+<meta name="theme-color" content="#FAF7F0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23C8952A'/%3E%3Ccircle cx='32' cy='32' r='26' fill='%23111'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia' font-weight='700' font-size='22' fill='%23F2D57A'%3EVIP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css?v=20260928">
+</head>
+<body data-strona="danie">
+<div class="tlo" aria-hidden="true"></div>
+<main class="scena" id="karta">
+  <a class="logo s-logo" href="index.html" aria-label="VIP Menu, strona główna"><span data-ikona="logo"></span><span>MENU</span></a>
+  <button type="button" class="strzalka s-gora" aria-label="Poprzednia restauracja"><span data-ikona="strzalka"></span><span>poprzednia restauracja</span></button>
+  <div class="s-miasto"><label class="miasto-pole "><span class="sr">Miasto</span><select class="miasto-wybor"><option>Łódź</option></select></label></div>
+  <div class="s-rest"><h1 id="r-nazwa">Sami's Restaurant</h1></div>
+  <a id="lnk-wejdz" class="wejdz" href="#" target="_blank" rel="noopener"><span data-ikona="drzwi"></span><span>wejdź…</span></a>
+  <a id="lnk-mapa" class="s-mapa" href="#" target="_blank" rel="noopener"><span data-ikona="mapa"></span><span>Mapa</span></a>
+  <div class="s-danie"><h2 id="d-nazwa">Tatar z&nbsp;polędwicy wołowej</h2><p id="d-opis">(kapary, żółtko przepiórcze, borowik, pikle)</p></div>
+  <button type="button" class="strzalka s-lewo" aria-label="Poprzednie danie"><span data-ikona="strzalka"></span><span>poprzednie danie</span></button>
+  <figure class="s-foto" id="foto"><img id="d-foto" src="img/tatar.jpg" alt="" width="900" height="900"><figcaption id="licz"></figcaption></figure>
+  <button type="button" class="strzalka s-prawo" aria-label="Następne danie"><span data-ikona="strzalka"></span><span>następne danie</span></button>
+  <button type="button" class="strzalka s-dol" aria-label="Następna restauracja"><span data-ikona="strzalka"></span><span>następna restauracja</span></button>
+  <div class="s-cena"><span id="d-cena">60 zł</span></div>
+  <p class="s-adres" id="r-adres">ul. Piotrkowska 12</p>
+  <div class="s-marka"><span data-ikona="logo"></span><span>VIP Menu<br>Polska</span></div>
+  <div class="scena-pusta" id="pusta" hidden><h2>W&nbsp;tym mieście nie ma jeszcze restauracji</h2><p>Pierwszą dodasz w <a href="panel.html">panelu sterowania</a>.</p></div>
+</main>
+<p class="wskazowka">Na telefonie przesuń zdjęcie w&nbsp;bok, żeby zobaczyć kolejne danie, albo w&nbsp;górę, żeby przejść do następnej restauracji. Na komputerze działają strzałki na klawiaturze.</p>
+<footer class="stopka">
+  <p><a href="index.html">Wyszukiwarka</a> · <a href="danie.html?los=1">Przeglądaj rotacyjnie</a> · <a href="panel.html">Panel sterowania</a></p>
+  <p>www.vip-menu.pl · wersja pokazowa z&nbsp;przykładowymi restauracjami · Projekt strony: Impulseo</p>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="assets/data.js?v=20260928"></script>
+<script src="assets/app.js?v=20260928"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VIP Menu - znajdź danie w&nbsp;swoim mieście</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Wpisz, na co masz ochotę, i zobacz dania z restauracji w Twoim mieście: zdjęcie, cena, adres i dojazd.">
+<meta property="og:title" content="VIP Menu: dania z restauracji w Twoim mieście">
+<meta property="og:description" content="Wpisz, na co masz ochotę. Zobacz zdjęcie, cenę, adres i dojazd.">
+<meta property="og:image" content="img/tatar.jpg">
+<meta name="theme-color" content="#FAF7F0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23C8952A'/%3E%3Ccircle cx='32' cy='32' r='26' fill='%23111'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia' font-weight='700' font-size='22' fill='%23F2D57A'%3EVIP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css?v=20260928">
+</head>
+<body data-strona="start">
+<div class="tlo" aria-hidden="true"></div>
+<header class="gora">
+  <a class="logo " href="index.html" aria-label="VIP Menu, strona główna"><span data-ikona="logo"></span><span>MENU</span></a>
+  <span class="gora-www">www.vip-menu.pl</span>
+  <label class="miasto-pole "><span class="sr">Miasto</span><select class="miasto-wybor"><option>Łódź</option></select></label>
+</header>
+<main class="start">
+  <h1>Na co masz <em>dziś</em> ochotę?</h1>
+  <p class="podtytul">Szukasz dania, a&nbsp;nie restauracji. Wpisz, co chcesz zjeść, a&nbsp;pokażemy, gdzie to podają, za ile i&nbsp;jak tam dojechać.</p>
+  <form id="szukaj-form" class="szukaj" role="search" action="index.html">
+    <label for="szukaj-pole" class="sr">Czego poszukujesz?</label>
+    <input id="szukaj-pole" type="search" placeholder="Czego poszukujesz? np. tatar, pizza" autocomplete="off" enterkeyhint="search">
+    <button class="btn-szukaj" type="submit">SZUKAJ</button>
+  </form>
+  <div class="podpowiedzi"><span>Często szukane:</span><button type="button">tatar</button><button type="button">pizza</button><button type="button">sushi</button><button type="button">pierogi</button><button type="button">burger</button></div>
+  <a class="btn-rot" href="danie.html?los=1">Przeglądaj menu rotacyjnie <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></a>
+  <p id="licznik" class="licznik"></p>
+  <div class="s-marka start-marka"><span data-ikona="logo"></span><span>VIP-Menu</span></div>
+</main>
+<section id="wyniki-sekcja" class="wyniki" hidden>
+  <h2 id="wyniki-tytul">Wyniki</h2>
+  <div id="wyniki" class="siatka"></div>
+</section>
+<footer class="stopka">
+  <p><a href="index.html">Wyszukiwarka</a> · <a href="danie.html?los=1">Przeglądaj rotacyjnie</a> · <a href="panel.html">Panel sterowania</a></p>
+  <p>www.vip-menu.pl · wersja pokazowa z&nbsp;przykładowymi restauracjami · Projekt strony: Impulseo</p>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="assets/data.js?v=20260928"></script>
+<script src="assets/app.js?v=20260928"></script>
+</body>
+</html>
